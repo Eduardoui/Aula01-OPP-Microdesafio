@@ -1,4 +1,4 @@
-# Aula01-OPP-Microdesafio
+# Aula03-OPP
 
 ## Descrição do Projeto
 Este projeto tem como objetivo praticar conceitos de **Programação Orientada a Objetos (OOP)** em Java, criando uma classe `Caneca` que representa objetos do mundo real.  
