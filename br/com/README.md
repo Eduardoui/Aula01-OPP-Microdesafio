@@ -16,3 +16,11 @@ Projeto desenvolvido para a disciplina de Programação Orientada a Objetos.
 - Getters e Setters
 - Construtor
 - Regras de validação
+
+## Como rodar
+
+1. cd src
+
+2. javac br/com/fiapride/main/SistemaPrincipal.java
+
+3. java br.com.fiapride.main.SistemaPrincipal

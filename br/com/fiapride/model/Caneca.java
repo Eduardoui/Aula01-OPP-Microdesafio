@@ -6,12 +6,14 @@ public class Caneca {
     private String tamanho;
     private String material;
     private double saldo;
+    private Dono dono;
 
-    public Caneca(String cor, String tamanho, String material) {
+    public Caneca(String cor, String tamanho, String material, Dono dono) {
         this.setCor(cor);
         this.setTamanho(tamanho);
         this.setMaterial(material);
         this.setSaldo(0);
+        this.dono = dono;
     }
 
     public String getCor() {
@@ -29,8 +31,11 @@ public class Caneca {
     public double getSaldo() {
         return this.saldo;
     }
+    
+    public Dono getDono() {
+        return this.dono;
+    }
 
-    // SETTERS (privados para proteger os dados)
 
     private void setCor(String cor) {
         this.cor = cor;
@@ -72,9 +77,11 @@ public class Caneca {
     }
 
     public void mostrarInfo() {
-        System.out.println("Caneca: " + cor + " | " + tamanho + " | " + material +
-                " | Saldo: R$" + saldo);
+    System.out.println("Caneca: " + cor + " | " + tamanho + " | " + material +
+            " | Saldo: R$" + saldo +
+            " | Dono: " + dono.getNome());
     }
+
 
 
     private boolean isValorValido(double quantidadeAdicionada) {

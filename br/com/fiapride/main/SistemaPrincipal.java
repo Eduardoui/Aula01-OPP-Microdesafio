@@ -1,6 +1,9 @@
 package br.com.fiapride.main;
 
 import br.com.fiapride.model.Caneca;
+import br.com.fiapride.model.Dono;
+import br.com.fiapride.model.CanecaTermica;
+import br.com.fiapride.model.CanecaPlastica;
 
 public class SistemaPrincipal {
 
@@ -8,8 +11,13 @@ public class SistemaPrincipal {
 
         System.out.println("--- Iniciando o Sistema FiapRide ---\n");
 
-        Caneca minhaCaneca = new Caneca("Rosa", "Pequena", "Plástico");
-        Caneca canecaDaMae = new Caneca("Vermelho", "Grande", "Vidro");
+        Dono eduardo = new Dono("Eduardo");
+        Dono mae = new Dono("Mãe");
+
+        Caneca minhaCaneca = new Caneca("Rosa", "Pequena", "Plástico", eduardo);
+        Caneca canecaDaMae = new Caneca("Vermelho", "Grande", "Vidro", mae);
+        Caneca canecaTermica = new CanecaTermica("Preto", "Média", "Aço", eduardo, true);
+        Caneca canecaPlastica = new CanecaPlastica("Azul", "Pequena", "Plástico", mae, true);
 
         System.out.println(">>> Recarga na minha caneca:");
         minhaCaneca.adicionarValor(50.0);
@@ -17,20 +25,28 @@ public class SistemaPrincipal {
         System.out.println("\n>>> Recarga na caneca da mãe:");
         canecaDaMae.adicionarValor(100.0);
 
+        System.out.println("\n>>> Recarga na caneca térmica:");
+        canecaTermica.adicionarValor(1.0);
+
+        System.out.println("\n>>> Recarga da caneca plástica:");
+        canecaPlastica.adicionarValor(2.0);
+
         System.out.println("\n--- Status das Canecas ---");
 
         System.out.println(
             "Caneca: " + minhaCaneca.getCor() +
             " | Tamanho: " + minhaCaneca.getTamanho() +
             " | Material: " + minhaCaneca.getMaterial() +
-            " | Saldo: R$ " + minhaCaneca.getSaldo()
+            " | Saldo: R$ " + minhaCaneca.getSaldo() +
+            " | Dono da caneca: " + minhaCaneca.getDono().getNome()
         );
 
         System.out.println(
             "Caneca: " + canecaDaMae.getCor() +
             " | Tamanho: " + canecaDaMae.getTamanho() +
             " | Material: " + canecaDaMae.getMaterial() +
-            " | Saldo: R$ " + canecaDaMae.getSaldo()
+            " | Saldo: R$ " + canecaDaMae.getSaldo() +
+            " | Dono da caneca: " + canecaDaMae.getDono().getNome()
         );
 
         System.out.println("\n--- Realizando Pagamentos ---");
@@ -45,5 +61,11 @@ public class SistemaPrincipal {
 
         minhaCaneca.mostrarInfo();
         canecaDaMae.mostrarInfo();
+        
+        System.out.println("DEBUG TERMICA");
+        canecaTermica.mostrarInfo();
+        
+        System.out.println("DEBUG PLASTICA");
+        canecaPlastica.mostrarInfo();
     }
 }
