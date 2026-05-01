@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class Caneca {
+public abstract class Caneca {
 
     private String cor;
     private String tamanho;
@@ -105,4 +105,8 @@ public class Caneca {
 
         return true;
     }
+
+
+    public abstract String tipoCaneca();
+
 }

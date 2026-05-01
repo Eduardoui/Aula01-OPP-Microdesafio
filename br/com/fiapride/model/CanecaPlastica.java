@@ -1,9 +1,9 @@
 package br.com.fiapride.model;
 
-public class CanecaTermica extends Caneca {
+public class CanecaPlastica extends Caneca {
 
-    private boolean livreBPA;;
-    public CanecaTermica(String cor, String tamanhp, Atrong material, Dono dono, boolean livreBPA) {
+    private boolean livreBPA;
+    public CanecaPlastica(String cor, String tamanho, String material, Dono dono, boolean livreBPA) {
 
         super(cor, tamanho, material, dono);
         this.livreBPA = livreBPA;
@@ -12,7 +12,12 @@ public class CanecaTermica extends Caneca {
     @Override
     public void mostrarInfo() {
         super.mostrarInfo();
-        System.out.println("Livre de BPA:" + livreBPA);
+        System.out.println("Livre de BPA: " + livreBPA);
 
+    }
+
+    @Override
+    public String tipoCaneca(){
+        return "Caneca Plástica";
     }
 }

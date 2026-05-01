@@ -14,8 +14,14 @@ public class SistemaPrincipal {
         Dono eduardo = new Dono("Eduardo");
         Dono mae = new Dono("Mãe");
 
-        Caneca minhaCaneca = new Caneca("Rosa", "Pequena", "Plástico", eduardo);
-        Caneca canecaDaMae = new Caneca("Vermelho", "Grande", "Vidro", mae);
+        Caneca minhaCaneca = new CanecaPlastica(
+            "Rosa", "Pequena", "Plástico", eduardo, true
+        );
+
+        Caneca canecaDaMae = new CanecaTermica(
+            "Vermelho", "Grande", "Vidro", mae, false
+        );
+
         Caneca canecaTermica = new CanecaTermica("Preto", "Média", "Aço", eduardo, true);
         Caneca canecaPlastica = new CanecaPlastica("Azul", "Pequena", "Plástico", mae, true);
 
@@ -67,5 +73,13 @@ public class SistemaPrincipal {
         
         System.out.println("DEBUG PLASTICA");
         canecaPlastica.mostrarInfo();
+
+        System.out.println(canecaTermica.tipoCaneca());
+        System.out.println(canecaPlastica.tipoCaneca());
+
+        // Caneca c = new Caneca("Rosa", "Pequena", "Plástico", new Dono("Eduardo"));
+        // Error: Caneca is abstract; cannot be instantiated || ERRO: Caneca é abstrata e não pode ser instanciada
+
     }
+
 }
