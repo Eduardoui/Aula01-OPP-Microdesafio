@@ -6,7 +6,7 @@
 - **RM:** 564925
 - **Turma:** 2CCPF
 - **Curso:** Ciências da Computação
-- **GitHub:** @EduardoUi
+- **GitHub:** @Eduardoui
 
 ---
 
