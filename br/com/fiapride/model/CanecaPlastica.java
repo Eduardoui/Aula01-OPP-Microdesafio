@@ -1,6 +1,6 @@
 package br.com.fiapride.model;
 
-public class CanecaPlastica extends Caneca {
+public class CanecaPlastica extends Caneca implements Lavavel {
 
     private boolean livreBPA;
     public CanecaPlastica(String cor, String tamanho, String material, Dono dono, boolean livreBPA) {
@@ -19,5 +19,11 @@ public class CanecaPlastica extends Caneca {
     @Override
     public String tipoCaneca(){
         return "Caneca Plástica";
+    }
+
+    @Override
+    public void lavar() {
+        System.out.println("Lavando caneca plástica rapidamente por "
+                + TEMPO_LAVAGEM + " minutos.");
     }
 }

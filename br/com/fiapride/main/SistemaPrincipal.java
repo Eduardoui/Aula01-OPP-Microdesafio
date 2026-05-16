@@ -4,6 +4,7 @@ import br.com.fiapride.model.Caneca;
 import br.com.fiapride.model.Dono;
 import br.com.fiapride.model.CanecaTermica;
 import br.com.fiapride.model.CanecaPlastica;
+import br.com.fiapride.model.Lavavel;
 
 public class SistemaPrincipal {
 
@@ -22,8 +23,8 @@ public class SistemaPrincipal {
             "Vermelho", "Grande", "Vidro", mae, false
         );
 
-        Caneca canecaTermica = new CanecaTermica("Preto", "Média", "Aço", eduardo, true);
-        Caneca canecaPlastica = new CanecaPlastica("Azul", "Pequena", "Plástico", mae, true);
+        CanecaTermica canecaTermica = new CanecaTermica("Preto", "Média", "Aço", eduardo, true);
+        CanecaPlastica canecaPlastica = new CanecaPlastica("Azul", "Pequena", "Plástico", mae, true);
 
         System.out.println(">>> Recarga na minha caneca:");
         minhaCaneca.adicionarValor(50.0);
@@ -80,6 +81,17 @@ public class SistemaPrincipal {
         // Caneca c = new Caneca("Rosa", "Pequena", "Plástico", new Dono("Eduardo"));
         // Error: Caneca is abstract; cannot be instantiated || ERRO: Caneca é abstrata e não pode ser instanciada
 
+
+    System.out.println("\n--- Lavagem das Canecas ---");
+    
+    Lavavel[] canecasLavaveis = {
+        canecaTermica,
+        canecaPlastica
+    };
+    
+    for (Lavavel lavavel : canecasLavaveis) {
+        lavavel.lavar();
     }
+}
 
 }

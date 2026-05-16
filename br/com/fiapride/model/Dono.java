@@ -7,10 +7,6 @@ public class Dono {
         this.nome = nome;
     }
 
-    public String getName() {
-        return nome;
-    }
-
     public String getNome() {
         return nome;
     }
